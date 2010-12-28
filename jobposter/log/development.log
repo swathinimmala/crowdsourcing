@@ -26,3 +26,87 @@ Migrating to CreateUsers (20101223113518)
   [4;35;1mSQL (0.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mdescribe `users`[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (18.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (100.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (413.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (141.6ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (438.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20101223113518)
+  [4;36;1mSQL (426.1ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (58.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101223113518')[0m
+Migrating to CreateJobs (20101228064030)
+  [4;36;1mSQL (156.5ms)[0m   [0;1mCREATE TABLE `jobs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (49.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101228064030')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (140.7ms)[0m   [0mSHOW FIELDS FROM `jobs`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `jobs`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `jobs`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-28 12:14:31) [GET]
+
+ActionController::RoutingError (No route matches "/job" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-12-28 12:14:35) [GET]
+  [4;36;1mJob Load (10.5ms)[0m   [0;1mSELECT * FROM `jobs` [0m
+Rendering template within layouts/jobs
+Rendering jobs/index
+Completed in 63ms (View: 47, DB: 11) | 200 OK [http://0.0.0.0/jobs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing JobsController#new (for 127.0.0.1 at 2010-12-28 12:14:38) [GET]
+  [4;35;1mJob Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `jobs`[0m
+Rendering template within layouts/jobs
+Rendering jobs/new
+Completed in 60ms (View: 53, DB: 1) | 200 OK [http://0.0.0.0/jobs/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing JobsController#create (for 127.0.0.1 at 2010-12-28 12:14:54) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"/zM+6MalanfSdqOIQoBV52bbP2LmOeggjmnQ93qZDE8=", "job"=>{"title"=>"Rasheed", "description"=>"Aadil "}}
+  [4;36;1mJob Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `jobs`[0m
+  [4;35;1mSQL (12.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mJob Create (40.0ms)[0m   [0;1mINSERT INTO `jobs` (`created_at`, `title`, `updated_at`, `description`) VALUES('2010-12-28 06:44:54', 'Rasheed', '2010-12-28 06:44:54', 'Aadil ')[0m
+  [4;35;1mSQL (64.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/jobs/1
+Completed in 128ms (DB: 118) | 302 Found [http://0.0.0.0/jobs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing JobsController#show (for 127.0.0.1 at 2010-12-28 12:14:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mJob Columns (0.4ms)[0m   [0;1mSHOW FIELDS FROM `jobs`[0m
+  [4;35;1mJob Load (56.3ms)[0m   [0mSELECT * FROM `jobs` WHERE (`jobs`.`id` = 1) [0m
+Rendering template within layouts/jobs
+Rendering jobs/show
+Completed in 70ms (View: 7, DB: 57) | 200 OK [http://0.0.0.0/jobs/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing JobsController#index (for 127.0.0.1 at 2010-12-28 12:14:58) [GET]
+  [4;36;1mJob Load (0.3ms)[0m   [0;1mSELECT * FROM `jobs` [0m
+Rendering template within layouts/jobs
+Rendering jobs/index
+  [4;35;1mJob Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `jobs`[0m
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/jobs]

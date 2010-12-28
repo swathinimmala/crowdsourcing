@@ -5,7 +5,7 @@ development:
   database: jobposter
   encoding:  utf8
   username: root
-  password: root
+  password: aadil
   pool: 5
   timeout: 5000
 
@@ -18,7 +18,7 @@ test:
   encoding: utf8
   pool: 5
   username: root
-  password: root
+  password: aadil
   timeout: 5000
 
 production:
@@ -26,6 +26,6 @@ production:
   encoding: utf8
   database: jobposter
   username: root
-  password: root
+  password: aadil
   pool: 5
   timeout: 5000
