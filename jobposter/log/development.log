@@ -26,6 +26,7 @@ Migrating to CreateUsers (20101223113518)
   [4;35;1mSQL (0.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mdescribe `users`[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `users`[0m
+<<<<<<< HEAD
   [4;36;1mSQL (18.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
   [4;36;1mSQL (100.5ms)[0m   [0;1mSHOW TABLES[0m
@@ -49,13 +50,32 @@ Migrating to CreateJobs (20101228064030)
   [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
   [4;35;1mSQL (0.4ms)[0m   [0mdescribe `users`[0m
   [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+=======
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20101223113518)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `users`[0m
+>>>>>>> sini_jobposter
   [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
+<<<<<<< HEAD
 Processing ApplicationController#index (for 127.0.0.1 at 2010-12-28 12:14:31) [GET]
 
 ActionController::RoutingError (No route matches "/job" with {:method=>:get}):
+=======
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-28 12:29:15) [GET]
+
+ActionController::RoutingError (No route matches "/crowdsourcing/jobs" with {:method=>:get}):
+>>>>>>> sini_jobposter
   
 
 Rendering rescues/layout (not_found)
@@ -63,6 +83,7 @@ Rendering rescues/layout (not_found)
   [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
+<<<<<<< HEAD
 Processing JobsController#index (for 127.0.0.1 at 2010-12-28 12:14:35) [GET]
   [4;36;1mJob Load (10.5ms)[0m   [0;1mSELECT * FROM `jobs` [0m
 Rendering template within layouts/jobs
@@ -110,3 +131,11 @@ Rendering template within layouts/jobs
 Rendering jobs/index
   [4;35;1mJob Columns (0.3ms)[0m   [0mSHOW FIELDS FROM `jobs`[0m
 Completed in 10ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/jobs]
+=======
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-28 12:29:21) [GET]
+
+ActionController::RoutingError (No route matches "/jobs" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+>>>>>>> sini_jobposter
